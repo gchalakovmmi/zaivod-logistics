@@ -1,13 +1,12 @@
 <?php
 
-if(isset($_GET['theme']) and $_GET['theme'] == 'dark') {
-        $_SESSION['theme']='dark';
+if(isset($_SESSION['theme'])==false) 
+	$_SESSION['theme']='light';
+else
+if($_SESSION['theme'] == 'dark')
         $_SESSION['opposite_theme']='light';
-}
-else {
-        $_SESSION['theme']='light';
+else
         $_SESSION['opposite_theme']='dark';
-}
 
 function navbar() {
 	echo '
@@ -19,7 +18,7 @@ function navbar() {
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarScroll">
+		<div class="collapse navbar-collapse text-center" id="navbarScroll">
 			<ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
 				<li class="nav-item">
 					<a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -62,8 +61,8 @@ function navbar() {
 						</a></li>
 					</ul>
 				</li>
-				<li class="nav-item" style="background-color: #cccccc; border-radius: 10px;">
-					<a class="nav-link" href="index.php?theme=' . $_SESSION['opposite_theme'] . '">
+				<li class="nav-item" style="background-color: #cccccc; border-radius: 10px; width: fit-content; padding: 0px 9px 0px 9px;">
+					<a class="nav-link" href="theme.php">
 						<img src="https://static-00.iconduck.com/assets.00/dark-theme-icon-2048x2048-ymrfkxsy.png" alt="Change Theme" style="width: 22px; height: 22px;">
 					</a>
 				</li>
@@ -249,7 +248,7 @@ function services() {
 			</div>
 			<div style="width: 100%; height: 25%; overflow-x: hidden; overflow-y: auto; display: flex; justify-content: center; align-items: center;">
 				<h4 class="text-center" style="color: black;">
-					Vehicle Trading
+					Transportation of Goods
 				</h4>
 			</div>
 		</div>
@@ -326,10 +325,10 @@ function footer() {
 		</div>
 
 		<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-			<li class="ms-3"><a class="text-body-secondary" href="#">
+			<li class="ms-3"><a class="text-body-secondary" href="https://www.jobs.bg/" target="_blank">
 				<img src="images/jobs.png" alt="JobsBG" class="rounded" style="height: 24px; border: 1px solid black;">
 			</a></li>
-			<li class="ms-3"><a class="text-body-secondary" href="#">
+			<li class="ms-3"><a class="text-body-secondary" href="https://www.mobile.bg/" target="_blank">
 				<img src="images/mobile.jpg" alt="JobsBG" class="rounded" style="height: 24px; border: 1px solid black;">
 			</a></li>
 		</ul>
