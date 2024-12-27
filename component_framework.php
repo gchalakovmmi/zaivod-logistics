@@ -1,4 +1,30 @@
 <?php
+require_once("functions.php");
+# US
+#$ip = '52.25.109.230';
+# AFG
+#$ip = '180.94.77.212';
+
+$ip = getVisIPAddr();
+$ipdat = @json_decode(file_get_contents(
+    "http://www.geoplugin.net/json.gp?ip=" . $ip));
+
+if($ipdat->geoplugin_countryName == 'Bulgaria')
+	$_SESSION['language']='BG';
+else if($ipdat->geoplugin_countryName == 'Afghanistan')
+	$_SESSION['language']='PS';
+else
+	$_SESSION['language']='EN';
+/*
+echo 'Country Name: ' . $ipdat->geoplugin_countryName . "<br>";
+echo 'City Name: ' . $ipdat->geoplugin_city . "<br>";
+echo 'Continent Name: ' . $ipdat->geoplugin_continentName . "<br>";
+echo 'Latitude: ' . $ipdat->geoplugin_latitude . "<br>";
+echo 'Longitude: ' . $ipdat->geoplugin_longitude . "<br>";
+echo 'Currency Symbol: ' . $ipdat->geoplugin_currencySymbol . "<br>";
+echo 'Currency Code: ' . $ipdat->geoplugin_currencyCode . "<br>";
+echo 'Timezone: ' . $ipdat->geoplugin_timezone;
+*/
 
 if(isset($_SESSION['theme'])==false) 
 	$_SESSION['theme']='light';
@@ -8,8 +34,6 @@ if($_SESSION['theme'] == 'dark')
 else
         $_SESSION['opposite_theme']='dark';
 
-if(isset($_SESSION['language'])==false) 
-	$_SESSION['language']='BG';
 
 function navbar($logo, $anchors, $languages) {
 	echo "
