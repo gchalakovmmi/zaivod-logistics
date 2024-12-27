@@ -25,4 +25,7 @@ tmux send-keys -t 'log' 'sh' C-m 'php -S localhost:8080' C-m
 tmux new-window -t zed:7 -n 'shell'
 tmux send-keys -t 'shell' 'sh' C-m 'php refresh_db.php' C-m
 
+tmux new-window -t zed:8 -n 'browser'
+tmux send-keys -t 'browser' 'sh' C-m 'firefox --new-window localhost:8080' C-m
+
 tmux attach-session -t zed:0

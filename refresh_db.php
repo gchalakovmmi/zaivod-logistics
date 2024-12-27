@@ -22,7 +22,7 @@ $db->query("DELETE FROM 'LANGUAGES'");
 
 $db->query("INSERT INTO 'LANGUAGES' ('ISO_CODE', 'NAME') VALUES ('EN', 'English')");
 $db->query("INSERT INTO 'LANGUAGES' ('ISO_CODE', 'NAME') VALUES ('BG', 'Български')");
-$db->query("INSERT INTO 'LANGUAGES' ('ISO_CODE', 'NAME') VALUES ('UR', 'ﺎﻔﻏﺎﻨﻳ')");
+$db->query("INSERT INTO 'LANGUAGES' ('ISO_CODE', 'NAME') VALUES ('PS', 'پښتو')");
 
 $db->exec("COMMIT");
 
@@ -123,59 +123,47 @@ $db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES (
 $db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('BG', 'footer-copyright', '© 2024 Zaivod Logistics, Ltd.')");
 
 
-// Urdu
-// Navbar
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'navbar-home', 'گھر')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'navbar-services', 'سروسز')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'navbar-services-transportation', ' سامان کی نقل و حمل')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'navbar-home', 'کور')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'navbar-services', 'خدمات')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'navbar-services-transportation', 'ټوکر پرواز')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'navbar-services-vehicle', 'ماشینونو تیجارت')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'navbar-about-us', 'موږ پورې')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'navbar-find-us', 'موځ پيدا کړی')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'navbar-contacts', 'تماسونه')");
 
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'navbar-services-vehicle', 'گاڑیوں کی تجارت')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'navbar-about-us', 'ہمارے بارے میں')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'navbar-find-us', 'ہمہیں کہاں تلاش کریں؟')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'label-slide1-heading', 'ستاسو وده مرسته کوو')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'label-slide1-paragraph', 'موږ له ستاسو سره غوره شی څاري کوو ترڅو موږ یوځای ووزی.')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'label-slide2-heading', 'ستاسو وده مرسته کوو')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'label-slide2-paragraph', 'موږ له ستاسو سره غوره شی څاري کوو ترڅو موږ یوځای ووزی.')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'label-slide3-heading', 'ستاسو وده مرسته کوو')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'label-slide3-paragraph', 'موږ له ستاسو سره غوره شی څاري کوو ترڅو موږ یوځای ووزی.')");
 
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'navbar-contacts', ' رابطہ کرنا')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'strip-heading', 'ستاسو شریکه په نړیوال تجارت کې')");
 
-// Slide Labels
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'label-slide1-heading', 'آپ کو بڑھنے میں مدد')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'label-slide1-paragraph', 'ہم آپ کو بہترین فراہم کرنے کے لئے quyết شدہ ہیں تاکہ ہم ایک ساتھ بڑھ سکیں.')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'label-slide2-heading', 'آپ کو بڑھنے میں مدد')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'label-slide2-paragraph', 'ہم آپ کو بہترین فراہم کرنے کے لئے quyết شدہ ہیں تاکہ ہم ایک ساتھ بڑھ سکیں.')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'label-slide3-heading', 'آپ کو بڑھنے میں مدد')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'label-slide3-paragraph', 'ہم آپ کو بہترین فراہم کرنے کے لئے quyết شدہ ہیں تاکہ ہم ایک ساتھ بڑھ سکیں.')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'heading-top-paragraph-bottom-paragraph', 'زیاود لوجستیکونه د یو ټرانسپورټ کمپنۍ په توګه دی چې په اروپا او آسيا کې یو ځانګړی لېږد لري. موږ د خپل مشهور شبکې او ځیرک معلوماتو سره، موږ باور وړ، لیکونکي او économیکونکو حلونه وړاندې کوو ترڅو ستاسو مشتریو ته د خپل لاملونو او وده کولو مرسته وکړي.')");
 
-// Strip and Top Paragraph
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'strip-heading', 'عالمی تجارت میں آپ کا ساتھی')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'heading-top-paragraph-bottom-paragraph', 'زایوڈ لاگسٹکس ایک نقل و حمل کی کمپنی ہے جو یورپ اور ایشیا بھر میں مختلف سامان کی نقل و حمل میں مہارت رکھتی ہے۔ ہمارے وسیع نیٹ ورک اور ماہر علم کے ساتھ، ہم قابل اعتماد، لچکدار اور مسابقتی حل فراہم کرتے ہیں جو ہماری موکلوں کو اپنے مقاصد حاصل کرنے اور اپنی کاروباریں بڑھانے میں مدد کرتے ہیں۔')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'find-us-heading', 'ستاسو موځ پيدا کړی')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'find-us-paragraph', 'موږ په ښکلی کلي کې يوځای ده چې په وویوودینوو کې ده. دلته تاسو کولی شئ موږ د بنسټ وکړی.')");
 
-// Find Us
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'find-us-heading', 'ہم کو کہاں تلاش کریں؟')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'find-us-paragraph', 'ہم خوبصورت گاؤں وویوڈینوو میں واقع ہیں۔ یہاں آپ ہماری بیس... کو تلاش کر سکتے ہیں.')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'services-heading', 'موږ څه وړاندې کوو')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'services-paragraph', 'په زایووډ لوجستیکونو کې، موږ د تاسو د لوجستیک لپاره ټول حلونه وړاندې کوو. زمونږ خدمتونو کې د عاجلو توکو لېږد، د تاسو د محصولاتو لپاره د خوندي او پورې تګ راتګضامن دی، او د ماشینونو د تیجارت لپاره هم ځانګړی کړی ده. له یو کاروبار څخه چې توکي لېږدوي تر یو فرد پورې چې یو نوې ماشین غواړي، موږ تاسو پورې ورسئ.')");
 
-// Services
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'services-heading', 'ہم کیا پیش کرتے ہیں')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'services-paragraph', 'زاائد لاگسٹکس میں، ہم اپنی تمام لاگسٹک ضروریات کے لئے جامع حل پیش کرتے ہیں۔ ہماری سروسز میں سامان کی نقل و حمل شامل ہے، یقینی بناتے ہوئے کہ آپ کے مصنوعات محفوظ طریقے سے اور وقت پر پہنچائی جائیں۔ ہم گاڑیوں کی تجارت میں بھی مہارت رکھتے ہیں، جو گاڑیوں کی خریداری یا فروخت کے لئے مختلف آپشنز پیش کرتے ہیں۔')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'card1-heading', 'ټوکر پرواز')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'card1-paragraph', 'ټول توکي په اروپا او آسيا کې د موږ له خدمت څخه خوندي لېږد کړی.')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'card2-heading', 'ماشینونو تیجارت')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'card2-paragraph', 'له موږ څخه د calidad ټرک او ماشینونه واخلی.')");
 
-// Cards
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'card1-heading', 'سامان کی نقل و حمل')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'card1-paragraph', ' یورپ اور ایشیا بھر میں ہمارے سروسز کے ساتھ محفوظ طریقے سے سامان کی نقل و حمل.')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'form-heading', 'له موږ سره اړیکه ونیسی')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'form-paragraph', 'زه موږ وفادار او که تاسو موږ ته خپل پوښتنې ورسوئ. تاسو کولی شئ موږ ته د <b>info@zaivodelogistics.com</b> یا لاندې څخه لیک وکړی.')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'form-label-company', 'د شرکت نوم')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'form-label-first-name', 'لومړی نوم')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'form-label-last-name', 'وروستی نوم')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'form-label-email', 'ایمیل')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'form-label-phone', 'تلفون')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'form-label-message', 'پیغام')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'form-submit', 'لیږل')");
 
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'card2-heading', 'گاڑیوں کی ریٹیل')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'card2-paragraph', 'ہمارے پاس سے ٹرک اور کars کار کی chất کی خریداری کریں.')");
-
-// Form
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'form-heading', 'ہم سے رابطہ کریں')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'form-paragraph', 'ہم اپنے آئندہ کام کے بارے میں آپ کے تمام سوالات کا جواب دینے سے خوش ہوں گے۔  آپ ہمیں <b>.info@zaivodelogistics.com</b> پر لکھ سکتے ہیں یا نیچے دیئے گئے فارم کو بھر سکتے ہیں.')");
-
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'form-label-company', 'کمپنی کا نام')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'form-label-first-name', 'پہلا نام')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'form-label-last-name', 'آخری نام')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'form-label-email', 'ای میل')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'form-label-phone', 'فون')");
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'form-label-message', 'پیغام')");
-
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'form-submit', 'Изпрати')");
-
-$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('UR', 'footer-copyright', '© 2024 Zaivod Logistics, Ltd.')");
+$db->query("INSERT INTO 'PHRASES' ('LANGUAGE_ISO_CODE', 'KEY', 'VALUE') VALUES ('PS', 'footer-copyright', ' ۲۰۲۴ زایووډ لوجستیکونه، لتد.')");
 
 
 $db->exec("COMMIT");
