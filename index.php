@@ -1,27 +1,14 @@
 <?php
 session_start();
+require_once("config.php");
 require_once("component_framework.php");
+
 
 $db = new SQLite3('db.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
 $db->enableExceptions(true);
 
-
-$query = "SELECT KEY, VALUE FROM PHRASES WHERE LANGUAGE_ISO_CODE = '{$_SESSION['language']}'";
-$results = $db->query($query);
-
-$phrases = array();
-while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
-	$phrases[$row['KEY']] = $row['VALUE'];
-}
-
-
-$query = "SELECT ISO_CODE, NAME FROM LANGUAGES";
-$results = $db->query($query);
-
-$languages = array();
-while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
-	$languages[] = $row;
-}
+$phrases = get_phrases($db);
+$languages = get_languages($db);
 
 $db->close();
 ?>
@@ -31,14 +18,13 @@ $db->close();
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Zaivod Logistics</title>
-		<link rel="icon" type="image/png" href="images/tab_logo.png">
+		<title><?php echo $client_name;?></title>
+		<link rel="icon" type="image/png" href="<?php echo $tab_logo;?>">
 		<link rel="stylesheet" href="styles/global_styles.css">
 		<?php require_once("bootstrap_head.php");?>
 	</head>
 	<body>
 		<?php 
-		$logo = 'images/logo1.jpg';
 		$anchors = [
 			[
 				'phrase' => $phrases['navbar-home'], 
@@ -73,9 +59,9 @@ $db->close();
 		];
 
 		navbar(
-			$logo,
 			$anchors,
 			$languages
+			$logo,
 		);
 
 		$coursel_height_percent = '80';
@@ -195,7 +181,7 @@ $db->close();
 			],
 			[
 				'col-md' => '6',
-				'label' => $phrases['form-label-first-name'],
+				'label' => $phrases['form-label-last-name'],
 				'id' => 'last_name',
 				'type' => 'text'
 			],
