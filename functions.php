@@ -1,6 +1,36 @@
 <?php 
 
 
+function log_user_visit($db) {
+	#$ip = getVisIPAddr();
+	#$ip = '180.94.77.212'; # Test AFG
+	$ip = '52.25.109.230'; # Test USA
+	$ipdat = @json_decode(file_get_contents(
+		'http://www.geoplugin.net/json.gp?ip=' . $ip));
+
+	$stmt = $db->prepare("INSERT INTO VISITS (COUNTRY, CITY, CONTINENT, LATITUDE, LONGITUDE, CURRENCY_SYMBOL, CURRENCY_CODE, TIMEZONE) VALUES (:country, :city, :continent, :latitude, :longitude, :currencySymbol, :currencyCode, :timezone)");
+	$stmt->bindValue(':country', $ipdat->geoplugin_countryName);
+	$stmt->bindValue(':city', $ipdat->geoplugin_city);
+	$stmt->bindValue(':continent', $ipdat->geoplugin_continentName);
+	$stmt->bindValue(':latitude', $ipdat->geoplugin_latitude);
+	$stmt->bindValue(':longitude', $ipdat->geoplugin_longitude);
+	$stmt->bindValue(':currencySymbol', $ipdat->geoplugin_currencySymbol);
+	$stmt->bindValue(':currencyCode', $ipdat->geoplugin_currencyCode);
+	$stmt->bindValue(':timezone', $ipdat->geoplugin_timezone);
+	$stmt->execute();
+}
+
+function get_visitor_data($db) {
+	$query = "SELECT COUNT(*) AS USER_COUNT, COUNTRY FROM VISITS GROUP BY COUNTRY";
+	$results = $db->query($query);
+
+	$visits = array();
+	while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
+		$visits[] = $row;
+        }
+	return $visits;
+}
+
 function get_phrases($db) {
 	$query = "SELECT KEY, VALUE FROM PHRASES WHERE LANGUAGE_ISO_CODE = '{$_SESSION['language']}'";
 	$results = $db->query($query);

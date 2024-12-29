@@ -1,20 +1,5 @@
 <?php
 
-$tables = [
-        'CREATE TABLE IF NOT EXISTS "LANGUAGES" (
-                "ISO_CODE" VARCHAR(2) PRIMARY KEY NOT NULL,
-                "NAME" VARCHAR(50) NOT NULL UNIQUE
-        )',
-        'CREATE TABLE IF NOT EXISTS "PHRASES" (
-                "ID" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-                "LANGUAGE_ISO_CODE" VARCHAR(2) NOT NULL,
-                "KEY" VARCHAR(100) NOT NULL,
-                "VALUE" TEXT NOT NULL,
-
-                FOREIGN KEY (LANGUAGE_ISO_CODE) REFERENCES LANGUAGES(ISO_CODE)
-        )'
-];
-
 $languages = [
         ['ISO_CODE' => 'EN', 'NAME' => 'English'],
         ['ISO_CODE' => 'BG', 'NAME' => 'Български'],

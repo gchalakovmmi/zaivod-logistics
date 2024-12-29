@@ -1,7 +1,9 @@
 <?php
 require_once("config.php");
 require_once("config_languages.php");
+require_once("config_db_tables.php");
 require_once("component_framework.php");
+
 
 refresh_db($tables, $languages, $phrases);
 

@@ -75,6 +75,7 @@ echo "
 \$db->enableExceptions(true);
 
 \$phrases = get_phrases(\$db);
+log_user_visit(\$db);
 \$languages = get_languages(\$db);
 
 \$db->close();
