@@ -5,6 +5,10 @@ if [ $# -ne 1 ]; then
 	exit 1
 fi
 
-php generator.php > $1
+rm -r generated
+cp -r resources generated
+cp config/config.php generated
+
+php page_constructor.php > generated/$1
 
 firefox --new-window localhost:8080/$1
