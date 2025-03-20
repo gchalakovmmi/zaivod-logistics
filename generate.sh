@@ -5,10 +5,8 @@ if [ $# -ne 1 ]; then
 	exit 1
 fi
 
-rm -r generated
-cp -r resources generated
-cp config/config.php generated
+rm -r app
+cp -r resources app
+cp config/config.php app
 
-php page_constructor.php > generated/$1
-
-firefox --new-window localhost:8080/$1
+php page_constructor.php > app/$1

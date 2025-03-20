@@ -2,7 +2,7 @@
 
 
 function refresh_db($tables, $languages, $phrases) {
-	$db = new SQLite3('generated/db.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
+	$db = new SQLite3('app/db.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
 	$db->enableExceptions(true);
 
 	foreach($tables as $table)

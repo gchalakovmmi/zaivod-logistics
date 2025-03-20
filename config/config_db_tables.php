@@ -14,14 +14,14 @@ $tables = [
 	)',
         'CREATE TABLE IF NOT EXISTS "VISITS" (
                 "ID" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-                "COUNTRY" VARCHAR(100) NOT NULL,
-                "CITY" VARCHAR(100) NOT NULL,
-                "CONTINENT" VARCHAR(100) NOT NULL,
-                "LATITUDE" VARCHAR(100) NOT NULL,
-                "LONGITUDE" VARCHAR(100) NOT NULL,
-                "CURRENCY_SYMBOL" VARCHAR(100) NOT NULL,
-                "CURRENCY_CODE" VARCHAR(100) NOT NULL,
-                "TIMEZONE" VARCHAR(100) NOT NULL
+                "COUNTRY" VARCHAR(100),
+                "CITY" VARCHAR(100),
+                "CONTINENT" VARCHAR(100),
+                "LATITUDE" VARCHAR(100),
+                "LONGITUDE" VARCHAR(100),
+                "CURRENCY_SYMBOL" VARCHAR(100),
+                "CURRENCY_CODE" VARCHAR(100),
+                "TIMEZONE" VARCHAR(100)
         )'
 ];
 

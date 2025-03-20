@@ -122,7 +122,7 @@ $phrases = [
     [
         'KEY' => 'heading-top-paragraph-bottom-paragraph',
         'TRANSLATIONS' => [
-            ['LANGUAGE_ISO_CODE' => 'EN', 'VALUE' => 'Zaivod Logistics is a transportation company that specializes in hauling a wide range of goods across Eu and Asia. With our extensive network and expert knowledge, we provide reliable, flexible, and cost-effective solutions that help our clients achieve their goals and grow their businesses.'],
+            ['LANGUAGE_ISO_CODE' => 'EN', 'VALUE' => 'Zaivod Logistics is a transportation company that specializes in hauling a wide range of goods across the EU and Asia. With our extensive network and expert knowledge, we provide reliable, flexible, and cost-effective solutions that help our clients achieve their goals and grow their businesses.'],
             ['LANGUAGE_ISO_CODE' => 'BG', 'VALUE' => 'Zaivod Logistics е транспортна компания, която се специализира в превоза на широк спектър от стоки из целия ЕС и Азия. С нашата обширна мрежа и експертни знания, ние предлагаме надежни, гъвкави и икономически ефективни решения, които помагат на нашите клиенти да постигнат целите си и да развиват бизнеса си.'],
             ['LANGUAGE_ISO_CODE' => 'PS', 'VALUE' => 'زاېوډ لوګستيکس موټرې د شرکت دی چې په ټوله اروپا او اسیا کې په مختلف قسمونو کې وسایط او اړیکي وړي. پدې که سابکه موقفل شوی چې خپل وسایط سره کولی شوم داعلی لوی کېډې ته لوړ شوم څو ډیرو اړیخو ته مساعد کړو.'],
         ]
@@ -138,9 +138,9 @@ $phrases = [
     [
         'KEY' => 'find-us-paragraph',
         'TRANSLATIONS' => [
-            ['LANGUAGE_ISO_CODE' => 'EN', 'VALUE' => 'We are situated in the beautiful village named Voivodinovo. Here you can find our base ... .'],
-            ['LANGUAGE_ISO_CODE' => 'BG', 'VALUE' => 'Намираме се в красивото село Воиводиново. Тук можете да намерите нашата база ... .'],
-            ['LANGUAGE_ISO_CODE' => 'PS', 'VALUE' => 'موږ د ښکلی کلی په 名 یوموړ نوم له ځایه څخه واقع شوی یو موندلی شو کلی دی دا ځای کی ماڼی زما موقعیت موندلی دی... .'],
+            ['LANGUAGE_ISO_CODE' => 'EN', 'VALUE' => 'We are situated in the beautiful village named Voivodinovo. Here you can find our base.'],
+            ['LANGUAGE_ISO_CODE' => 'BG', 'VALUE' => 'Намираме се в красивото село Воиводиново. Тук можете да намерите нашата база.'],
+            ['LANGUAGE_ISO_CODE' => 'PS', 'VALUE' => 'موږ د ښکلی کلی په 名 یوموړ نوم له ځایه څخه واقع شوی یو موندلی شو کلی دی دا ځای کی ماڼی زما موقعیت موندلی دی.'],
         ]
     ],
     [
@@ -202,9 +202,9 @@ $phrases = [
     [
         'KEY' => 'form-paragraph',
         'TRANSLATIONS' => [
-            ['LANGUAGE_ISO_CODE' => 'EN', 'VALUE' => 'We would love to answer all your questions regarding our future work together. You can write to us at <b>info@zaivodelogistics.com</b> or dire in the form below.'],
-            ['LANGUAGE_ISO_CODE' => 'BG', 'VALUE' => 'Ние бихме искали да отговорим на всички въпроси, свързани с нашата бъдеща работа заедно. Можете да ни пишете на <b>info@zaivodelogistics.com</b> или да използвате формата по-долу.'],
-            ['LANGUAGE_ISO_CODE' => 'PS', 'VALUE' => 'زمونږ غواړو چې تاسو ته زمونږ په اړه پوښتنې ځواب کړو. تاسو کولی شۍ مونږ ته <b>info@zaivodelogistics.com</b> ته اړیکه ونیسی او یا په لاندې ډول سره پوښتنې وکړی.'],
+            ['LANGUAGE_ISO_CODE' => 'EN', 'VALUE' => 'We would love to answer all your questions regarding our future work together. You can write to us at <b>zaidsadeqhi@gmail.com</b> or directly in the form below.'],
+            ['LANGUAGE_ISO_CODE' => 'BG', 'VALUE' => 'Ние бихме искали да отговорим на всички въпроси, свързани с нашата бъдеща работа заедно. Можете да ни пишете на <b>zaidsadeqhi@gmail.com</b> или да използвате формата по-долу.'],
+            ['LANGUAGE_ISO_CODE' => 'PS', 'VALUE' => 'زمونږ غواړو چې تاسو ته زمونږ په اړه پوښتنې ځواب کړو. تاسو کولی شۍ مونږ ته <b>zaidsadeqhi@gmail.com</b> ته اړیکه ونیسی او یا په لاندې ډول سره پوښتنې وکړی.'],
         ]
     ],
     [

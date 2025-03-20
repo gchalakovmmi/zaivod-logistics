@@ -11,5 +11,5 @@ $password = 'qalzizfsqekwyidj';
 $sender_name = 'PulpuDev';
 $smtp_server = 'smtp.gmail.com';
 
-$recipient_email = 'gchalakovmmi@gmail.com';
+$recipient_email = 'zaidsadeqhi@gmail.com';
 $recipient_name = $business_name;
