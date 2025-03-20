@@ -69,7 +69,7 @@ USER nobody
 COPY --chown=nobody app/ /var/www/html/
 
 # Install dependencies
-RUN ./install_dependencies.sh
+# RUN ./install_dependencies.sh
 # RUN ./refresh_db.sh
 
 # Expose the port nginx is reachable on
