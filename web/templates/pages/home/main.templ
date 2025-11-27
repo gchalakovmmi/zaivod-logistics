@@ -1,0 +1,20 @@
+package home
+
+import ( "zaivod-logistics/web/templates/base" )
+
+templ styles() {}
+templ scripts() {}
+
+templ sections() {
+	@carousel()
+}
+
+func GetPhrases(language string) map[string]string {
+	phrases := make(map[string]string)
+	phrases["home-title"] = "Zaivod Logistics"
+	return phrases
+}
+
+templ Handler(route, icon, language  string) {
+	@base.Base(route, icon, GetPhrases(language), language, styles(), scripts(), sections())
+}
