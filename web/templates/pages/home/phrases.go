@@ -16,6 +16,8 @@ var phrases = map[string]map[string]string{
 		"carousel-caption-3": "Помагаме Ви да растете. Ние сме решени да ви предоставим най-доброто, за да можем да растем заедно.",
 		"about-title": "Вашият партньор в глобалната търговия",
 		"about-description": "Zaivod Logistics е транспортна компания, която се специализира в превоза на широк спектър от стоки из целия ЕС и Азия. С нашата обширна мрежа и експертни знания, ние предлагаме надежни, гъвкави и икономически ефективни решения, които помагат на нашите клиенти да постигнат целите си и да развиват бизнеса си.",
+		"find-title": "Къде можете да ни намерите?",
+		"find-description": "Намираме се в красивото село Войводиново. Тук можете да намерите нашата база.",
 	},
 	"en": {
 		"title": "Zaivod Logistics",
@@ -32,6 +34,8 @@ var phrases = map[string]map[string]string{
 		"carousel-caption-3": "Helping you grow. We are determined to provide you with the best so we can grow together.",
 		"about-title": "Your Partner in Global Trade",
 		"about-description": "Zaivod Logistics is a transport company specializing in the transportation of a wide range of goods throughout the EU and Asia. With our extensive network and expert knowledge, we offer reliable, flexible, and cost-effective solutions that help our customers achieve their goals and grow their business.",
+		"find-title": "Where can you find us?",
+		"find-description": "We are located in the beautiful village of Voevodinovo. Here you can find our base.",
 	},
 	"ps": {
 		"title": "Заивод Логистикс",
@@ -48,5 +52,7 @@ var phrases = map[string]map[string]string{
 		"carousel-caption-3": "ستاسو د وده کولو مرسته. موږ تصمیم لرو چې تاسو ته غوره وړاندیز وکړو ترڅو موږ یوځای وده وکړو.",
 		"about-title": "ستاسو شریک په نړیواله سوداګرۍ کې",
 		"about-description": "Заивод Логистикс د ترانسپورت یوه شرکت دی چې د EU او آسیا په ټوله کې د توکو د لویې لړۍ د لېږد تخصص لري. زموږ د پراخې شبکې او متخصصې پوهې سره، موږ د باور وړ، انعطاف وړ او اقتصادي حل لارې وړاندې کوو چې زموږ پیرودونکو سره مرسته کوي چې خپل هدفونه ترلاسه کړي او خپل سوداګرۍ وده کړي.",
+		"find-title": "چیرته موږ پیدا کولی شئ؟",
+		"find-description": "موږ د Voevodinovo په ښکلي کلي کې موقعیت لرو. دلته تاسو کولی شئ زموږ اډه ومومئ.",
 	},
 }
