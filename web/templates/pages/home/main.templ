@@ -7,10 +7,10 @@ templ scripts() {
 // <script type="text/javascript" src="/web/static/scripts/hide_navbar.js"></script>
 }
 
-templ sections() {
-	@carousel()
+templ sections(language string, phrases map[string]map[string]string) {
+	@carousel(language, phrases)
 }
 
 templ Handler(route, icon, language  string) {
-	@base.Base(route, icon, phrases, language, styles(), scripts(), sections())
+	@base.Base(route, icon, phrases, language, styles(), scripts(), sections(language, phrases))
 }

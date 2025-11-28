@@ -1,4 +1,52 @@
 package home
 
-templ carousel() {
+templ carousel(language string, phrases map[string]map[string]string) {
+	<div id="carousel" class="carousel carousel-dark slide">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+			<button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 2"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active" data-bs-interval="2000">
+				<div style="height: 80vh; overflow: hidden;">
+					<img src="https://images.alphacoders.com/504/504216.jpg" class="d-block w-100" style="height: 100%; width: 100%; object-fit: cover;" alt="Image of a truck">
+				</div>
+				<div class="carousel-caption d-none d-md-block" style="background-color: white; opacity: 0.8; width: fit-content; margin: 0 auto; padding: 5px; border-radius: 10px;">
+					<h5>{ phrases[language]["carousel-title"] }</h5>
+					<p>{ phrases[language]["carousel-caption-1"] }</p>
+				</div>
+			</div>
+			<div class="carousel-item" data-bs-interval="2000">
+				<div style="height: 80vh; overflow: hidden;">
+					<img src="https://images.alphacoders.com/504/504216.jpg" class="d-block w-100" style="height: 100%; width: 100%; object-fit: cover;" alt="Image of a truck">
+				</div>
+				<div class="carousel-caption d-none d-md-block" style="background-color: white; opacity: 0.8; width: fit-content; margin: 0 auto; padding: 5px; border-radius: 10px;">
+					<h5>{ phrases[language]["carousel-title"] }</h5>
+					<p>{ phrases[language]["carousel-caption-2"] }</p>
+				</div>
+			</div>
+			<div class="carousel-item" data-bs-interval="2000">
+				<div style="height: 80vh; overflow: hidden;">
+					<img src="https://images.alphacoders.com/504/504216.jpg" class="d-block w-100" style="height: 100%; width: 100%; object-fit: cover;" alt="Image of a truck">
+				</div>
+				<div class="carousel-caption d-none d-md-block" style="background-color: white; opacity: 0.8; width: fit-content; margin: 0 auto; padding: 5px; border-radius: 10px;">
+					<h5>{ phrases[language]["carousel-title"] }</h5>
+					<p>{ phrases[language]["carousel-caption-3"] }</p>
+				</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+			<div style="background-color: white; padding: 10px; padding-top: 15px; border-radius: 10px;">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</div>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+			<div style="background-color: white; padding: 10px; padding-top: 15px; border-radius: 10px;">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</div>
+		</button>
+	</div>
 }
