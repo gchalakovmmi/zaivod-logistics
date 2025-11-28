@@ -1,0 +1,35 @@
+package home
+
+templ aboutUs(language string, phrases map[string]map[string]string) {
+	<div class="container" id="about-us" style="height: 20vh; display: flex; justify-content: center; align-items: center;">
+		<div class="row justify-content-center text-center">
+			<h1 class="col-12">{ phrases[language]["about-title"] }</h1>
+		</div>
+	</div>
+	
+	<div class="container" id="about-us">
+		<div class="row justify-content-center">
+			<h1 class="col-10 text-center"></h1>
+		</div>
+		<div class="row justify-content-center">
+			<p class="col-10 text-center">{ phrases[language]["about-description"] }</p>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row justify-content-center mt-5">
+			<div class="col-10 p-0" style="border-radius: 10px; background-color: lightblue;">
+				<div style="border: 2px black solid; border-radius: 10px;">
+					<div class="d-block w-100" style="height: 100%; width: 100%;" id="svg-container"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/web/static/scripts/map.js"></script>
+	<script>
+		load_map(500, 180, 200, 220);
+	</script>
+	
+	<div class="mt-5 mb-5" style="background-color: #cccccc; height: 10px;"></div>
+}

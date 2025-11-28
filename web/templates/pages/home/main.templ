@@ -9,6 +9,7 @@ templ scripts() {
 
 templ sections(language string, phrases map[string]map[string]string) {
 	@carousel(language, phrases)
+	@aboutUs(language, phrases)
 }
 
 templ Handler(route, icon, language  string) {
