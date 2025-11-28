@@ -6,6 +6,8 @@ import (
 	"zaivod-logistics/web/templates/pages/home"
 )
 
-func Home(route, title, icon string) http.Handler {
-	return templ.Handler(home.Handler(route, title, icon))
+func Home(route, icon string) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		templ.Handler(home.Handler(route, icon, r.PathValue("language"))).ServeHTTP(w, r)
+	})
 }

@@ -1,25 +1,22 @@
 package base
 
 templ Base(
-	route string,
-	icon string,
-	phrases map[string]string, 
+	route, icon string,
+	phrases map[string]map[string]string, 
 	language string, 
-	styles, 
-	scripts, 
-	sections templ.Component) {
+	styles, scripts, sections templ.Component) {
 	<!DOCTYPE html>
 	<html lang={ language }>
 		<head>
 			<meta charset="utf-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1"/>
-			<title>{ phrases["home-title"] }</title>
+			<title>{ phrases[language]["title"] }</title>
 			<link rel="icon" href={ icon }/>
 			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
 			@styles
 		</head>
 		<body>
-			@navbar(route, language)
+			@navbar(route, language, phrases)
 			<main>
 				@sections
 			</main>

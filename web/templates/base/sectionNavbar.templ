@@ -1,4 +1,69 @@
 package base
 
-templ navbar(route, language string) {
+import "strings"
+
+templ navbar(route, language string, phrases map[string]map[string]string) {
+	<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary" style="transition: transform 0.3s;">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">
+				<img src="/web/static/images/logo.webp" alt="logo" style="height: 44px; border-radius: 10px; border: 1px solid black;">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse text-center" id="navbarScroll">
+				<ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="#home">{ phrases[language]["navbar-home"] }</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							{ phrases[language]["navbar-services"] }
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#services">
+								{ phrases[language]["navbar-transport"] }
+							</a></li>
+							<li><a class="dropdown-item" href="#services">
+								{ phrases[language]["navbar-cars"] }
+							</a></li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="#about-us">{ phrases[language]["navbar-about"] }</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="#find-us">{ phrases[language]["navbar-find"] }</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="#contacts">{ phrases[language]["navbar-contacts"] }</a>
+					</li>
+					<li class="nav-item dropdown me-5">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<img src={ templ.SafeURL("/web/static/icons/" + strings.ToUpper(language) + ".ico") } alt={ language } style="height: 22px; width: 22px; border-radius: 10px;">
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href={ templ.SafeURL("/bg" + route) }>
+								<img src="/web/static/icons/BG.ico" alt="Български" style="height: 22px; width: 22px; border-radius: 10px;">
+								Български
+							</a></li>
+							<li><a class="dropdown-item" href={ templ.SafeURL("/en" + route) }>
+								<img src="/web/static/icons/EN.ico" alt="English" style="height: 22px; width: 22px; border-radius: 10px;">
+								English
+							</a></li>
+							<li><a class="dropdown-item" href={ templ.SafeURL("/ps" + route) }>
+								<img src="/web/static/icons/PS.ico" alt="ﭖښﺕﻭ" style="height: 22px; width: 22px; border-radius: 10px;">
+								ﭖښﺕﻭ
+							</a></li>
+						</ul>
+					</li>
+					<li class="nav-item" style="background-color: #cccccc; border-radius: 10px; width: fit-content; padding: 0px 9px 0px 9px;">
+						<a class="nav-link" href="#">
+							<img src="/web/static/icons/theme.ico" alt="Change Theme" style="width: 22px; height: 22px;">
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 }

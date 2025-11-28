@@ -20,11 +20,11 @@ func (s *Server) CreateHandlers() http.Handler {
 
 	mux.Handle("/web/static/",	http.StripPrefix("/web/static/", http.FileServer(http.Dir("./web/static"))))
 
-	mux.Handle("/health",	handlers.Health())
-	mux.Handle("/home",	handlers.Home("/home", "Zaivod Logistics", "/web/static/logo.webp"))
+	mux.Handle("/health",		handlers.Health())
+	mux.Handle("/{language}/home",	handlers.Home("/home", "/web/static/icons/favicon.ico"))
 
 	mux.Handle("/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		http.Redirect(w, r, "/home", http.StatusSeeOther)
+		http.Redirect(w, r, "/bg/home", http.StatusSeeOther)
 	}))
 
 	return mux
