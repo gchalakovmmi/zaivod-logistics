@@ -16,7 +16,7 @@ build:
 
 clean:
 		@echo "Cleaning binaries and generated files..."
-		rm -rf bin
+		rm cmd/app/app
 		find . -name "*_templ.go" -delete
 
 run:
