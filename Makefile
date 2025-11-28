@@ -5,7 +5,7 @@ DOMAIN := logistics.zaivod.com
 BINARY_NAME := app
 LINUX_USER := root
 
-.PHONY: clear build run app app-logs app-connect all up down restart
+.PHONY: clear build clean run app app-logs app-connect all up down restart
 
 clear:
 	@clear
@@ -13,6 +13,11 @@ clear:
 build:
 	@echo "=== Build ==="
 	@templ generate && go build -o cmd/app/$(BINARY_NAME) cmd/app/main.go
+
+clean:
+		@echo "Cleaning binaries and generated files..."
+		rm -rf bin
+		find . -name "*_templ.go" -delete
 
 run:
 	@echo "Running Binary"

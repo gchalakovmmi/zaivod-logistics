@@ -1,1 +1,2 @@
-setup_tmux_env.sh
+app/cmd/app/app
+*_templ.go
