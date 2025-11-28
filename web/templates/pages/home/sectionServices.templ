@@ -1,0 +1,46 @@
+package home
+
+templ services(language string, phrases map[string]map[string]string) {
+	<div class="container" id="services">
+		<div class="row justify-content-center">
+			<h1 class="col-10 text-center">{ phrases[language]["services-title"] }</h1>
+		</div>
+		<div class="row justify-content-center">
+			<p class="col-10 text-center">{ phrases[language]["services-description"] }</p>
+		</div>
+	</div>
+	
+	<div class="container" id="services">
+		<div class="row justify-content-center">
+			<div class="col-md-5 p-0 m-3 card">
+				<div style="width: 100%; height: 60%; overflow: hidden; border-radius: 10px 10px 0px 0px;">
+					<img src="/web/static/images/services-transport.webp" class="d-block w-100" alt="Truck">
+				</div>
+				<div class="row" style="width: 100%; height: 40%; overflow-x: hidden; overflow-y: auto; display: flex; justify-content: center; align-items: center;">
+					<h4 class="text-center" style="color: black;">
+						{ phrases[language]["services-transport-title"] }
+					</h4>
+					<p class="text-center" style="color: black;">
+						{ phrases[language]["services-transport-description"] }
+					</p>
+				</div>
+			</div>
+			
+			<div class="col-md-5 p-0 m-3 card">
+				<div style="width: 100%; height: 60%; overflow: hidden; border-radius: 10px 10px 0px 0px;">
+					<img src="/web/static/images/services-cars.webp" class="d-block w-100" alt="Car">
+				</div>
+				<div class="row" style="width: 100%; height: 40%; overflow-x: hidden; overflow-y: auto; display: flex; justify-content: center; align-items: center;">
+					<h4 class="text-center" style="color: black;">
+						{ phrases[language]["services-cars-title"] }
+					</h4>
+					<p class="text-center" style="color: black;">
+						{ phrases[language]["services-cars-description"] }
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="mt-5 mb-5" style="background-color: #cccccc; height: 10px;"></div>
+}

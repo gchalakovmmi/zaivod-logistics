@@ -2,15 +2,18 @@ package home
 
 import ( "zaivod-logistics/web/templates/base" )
 
-templ styles() {}
+templ styles() {
+	<link rel="stylesheet" href="/web/static/styles/services.css"/>
+}
 templ scripts() {
-// <script type="text/javascript" src="/web/static/scripts/hide_navbar.js"></script>
+	// <script type="text/javascript" src="/web/static/scripts/hide_navbar.js"></script>
 }
 
 templ sections(language string, phrases map[string]map[string]string) {
 	@carousel(language, phrases)
 	@aboutUs(language, phrases)
 	@findUs(language, phrases)
+	@services(language, phrases)
 }
 
 templ Handler(route, icon, language  string) {

@@ -1,0 +1,20 @@
+/* Services section styles */
+.services-card {
+	height: 400px;
+	background-color: #cccccc;
+	border-radius: 10px;
+	border: 1px solid black;
+	transition: transform 0.2s ease-in-out;
+}
+
+.services-card img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	border: 1px solid black;
+}
+
+.services-card:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
