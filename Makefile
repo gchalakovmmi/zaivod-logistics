@@ -11,7 +11,7 @@ clear:
 	@clear
 
 build:
-	@echo "=== Build ==="
+	@echo "=== Building Binary ==="
 	@templ generate && go build -o cmd/app/$(BINARY_NAME) cmd/app/main.go
 
 clean:
@@ -20,11 +20,11 @@ clean:
 		find . -name "*_templ.go" -delete
 
 run:
-	@echo "Running Binary"
+	@echo "=== Running Binary ==="
 	export $$(grep -v '^#' .env | xargs) && ./cmd/app/$(BINARY_NAME)
 
 app:
-	@echo "=== App ==="
+	@echo "=== Building and Running App ==="
 	@docker compose up -d --build app
 
 app-logs:
@@ -36,8 +36,8 @@ app-connect:
 
 all: app
 
-push: all
-	@echo "=== Push ==="
+push: app
+	@echo "=== Push App Docker Image ==="
 	@docker tag $(IMAGE) $(DREG)/$(IMAGE):latest
 	@docker push $(DREG)/$(APP_IMAGE):latest
 	@docker push $(DREG)/$(DATABASE_IMAGE):latest
