@@ -4,7 +4,9 @@ templ contactUs(language, theme string, phrases map[string]map[string]string) {
 	<div class="container p-5" style="border-radius: 10px; border: 1px solid #cccccc;" id="contacts">
 		<div class="row justify-content-center">
 			<h1 class="text-center">{ phrases[language]["contacts-title"] }</h1>
-			<p class="text-center mt-3">{ phrases[language]["contacts-description"] }</p>
+			<p class="text-center mt-3">
+				@templ.Raw(phrases[language]["contacts-description"])
+			</p>
 		</div>
 		<div class="row justify-content-center">
 			<form class="row g-3">
