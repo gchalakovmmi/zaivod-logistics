@@ -1,25 +1,25 @@
 package base
 
-templ footer() {
+templ footer(language, theme string) {
 	<div class="container">
 		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
 			<div class="col-md-4 d-flex align-items-center">
 				<a href="#" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
 					<img src="/web/static/images/logo.webp" alt="logo" style="height: 44px; border-radius: 10px; border: 1px solid black;">
 				</a>
-				<span class="mb-3 mb-md-0 text-body-secondary">© 2024 Заивод Логистикс, ООД</span>
+				<span class="mb-3 mb-md-0 text-body-secondary">{ phrases[language]["footer-copyright"] }</span>
 			</div>
 
 			<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
 				<li class="ms-3">
 					<a class="text-body-secondary" href="https://www.jobs.bg/" target="_blank">
-						<img src="/web/static/icons/jobsbg.ico" alt="Jobs BG" class="rounded" style="height: 24px; border: 1px solid black;">
+						<img src="/web/static/icons/jobsbg.ico" alt="Jobs BG" class="rounded" style="height: 24px;">
 						jobs.bg
 					</a>
 				</li>
 				<li class="ms-3">
 					<a class="text-body-secondary" href="https://www.mobile.bg/" target="_blank">
-						<img src="/web/static/icons/mobilebg.ico" alt="Mobile BG" class="rounded" style="height: 24px; border: 1px solid black;">
+						<img src="/web/static/icons/mobilebg.ico" alt="Mobile BG" class="rounded" style="height: 24px;">
 						mobile.bg
 					</a>
 				</li>

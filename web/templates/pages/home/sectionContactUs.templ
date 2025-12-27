@@ -1,6 +1,6 @@
 package home
 
-templ contactUs(language string, phrases map[string]map[string]string) {
+templ contactUs(language, theme string, phrases map[string]map[string]string) {
 	<div class="container p-5" style="border-radius: 10px; border: 1px solid #cccccc;" id="contacts">
 		<div class="row justify-content-center">
 			<h1 class="text-center">{ phrases[language]["contacts-title"] }</h1>

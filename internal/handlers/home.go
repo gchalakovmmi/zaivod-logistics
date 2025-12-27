@@ -8,6 +8,6 @@ import (
 
 func Home(route, icon string) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		templ.Handler(home.Handler(route, icon, r.PathValue("language"))).ServeHTTP(w, r)
+		templ.Handler(home.Handler(route, icon, r.PathValue("language"), r.PathValue("theme"))).ServeHTTP(w, r)
 	})
 }

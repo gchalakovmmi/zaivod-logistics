@@ -18,14 +18,12 @@ func New(cfg *config.Config) *Server {
 func (s *Server) CreateHandlers() http.Handler {
 	mux := http.NewServeMux()
 
-	mux.Handle("/web/static/",	http.StripPrefix("/web/static/", http.FileServer(http.Dir("./web/static"))))
+	mux.Handle("/web/static/",		http.StripPrefix("/web/static/", http.FileServer(http.Dir("./web/static"))))
 
-	mux.Handle("/health",		handlers.Health())
-	mux.Handle("/{language}/home",	handlers.Home("/home", "/web/static/icons/favicon.ico"))
+	mux.Handle("/health",			handlers.Health())
+	mux.Handle("/home/{language}/{theme}",	handlers.Home("/home", "/web/static/icons/favicon.ico"))
 
-	mux.Handle("/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		http.Redirect(w, r, "/bg/home", http.StatusSeeOther)
-	}))
+	mux.Handle("/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) { http.Redirect(w, r, "/home/bg/light", http.StatusSeeOther) }))
 
 	return mux
 }

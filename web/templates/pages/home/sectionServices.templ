@@ -1,6 +1,6 @@
 package home
 
-templ services(language string, phrases map[string]map[string]string) {
+templ services(language, theme string, phrases map[string]map[string]string) {
 	<div class="container" id="services">
 		<div class="row justify-content-center">
 			<h1 class="col-10 text-center">{ phrases[language]["services-title"] }</h1>

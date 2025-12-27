@@ -1,6 +1,6 @@
 package home
 
-templ aboutUs(language string, phrases map[string]map[string]string) {
+templ aboutUs(language, theme string, phrases map[string]map[string]string) {
 	<div class="container" id="about-us" style="height: 20vh; display: flex; justify-content: center; align-items: center;">
 		<div class="row justify-content-center text-center">
 			<h1 class="col-12">{ phrases[language]["about-title"] }</h1>

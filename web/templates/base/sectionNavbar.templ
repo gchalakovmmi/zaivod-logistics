@@ -2,7 +2,7 @@ package base
 
 import "strings"
 
-templ navbar(route, language string, phrases map[string]map[string]string) {
+templ navbar(route, language, theme string) {
 	<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary" style="transition: transform 0.3s;">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">
@@ -43,24 +43,30 @@ templ navbar(route, language string, phrases map[string]map[string]string) {
 							<img src={ templ.SafeURL("/web/static/icons/" + strings.ToUpper(language) + ".ico") } alt={ language } style="height: 22px; width: 22px; border-radius: 10px;">
 						</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href={ templ.SafeURL("/bg" + route) }>
+							<li><a class="dropdown-item" href={ templ.SafeURL(route + "/bg/" + theme) }>
 								<img src="/web/static/icons/BG.ico" alt="Български" style="height: 22px; width: 22px; border-radius: 10px;">
 								Български
 							</a></li>
-							<li><a class="dropdown-item" href={ templ.SafeURL("/en" + route) }>
+							<li><a class="dropdown-item" href={ templ.SafeURL(route + "/en/" + theme) }>
 								<img src="/web/static/icons/EN.ico" alt="English" style="height: 22px; width: 22px; border-radius: 10px;">
 								English
 							</a></li>
-							<li><a class="dropdown-item" href={ templ.SafeURL("/ps" + route) }>
+							<li><a class="dropdown-item" href={ templ.SafeURL(route + "/ps/" + theme) }>
 								<img src="/web/static/icons/PS.ico" alt="ﭖښﺕﻭ" style="height: 22px; width: 22px; border-radius: 10px;">
 								ﭖښﺕﻭ
 							</a></li>
 						</ul>
 					</li>
 					<li class="nav-item" style="background-color: #cccccc; border-radius: 10px; width: fit-content; padding: 0px 9px 0px 9px;">
-						<a class="nav-link" href="#">
-							<img src="/web/static/icons/theme.ico" alt="Change Theme" style="width: 22px; height: 22px;">
+						if theme == "light" {
+						<a class="nav-link" href={ templ.URL(route + "/" + language + "/dark") }>
+							<img src="/web/static/icons/theme.ico" alt="🌙 Dark Mode" style="width: 22px; height: 22px;">
 						</a>
+						} else {
+						<a class="nav-link" href={ templ.URL(route + "/" + language + "/light") }>
+							<img src="/web/static/icons/theme.ico" alt="☀️ Light Mode" style="width: 22px; height: 22px;">
+						</a>
+						}
 					</li>
 				</ul>
 			</div>

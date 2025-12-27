@@ -10,14 +10,14 @@ templ scripts() {
 	<script type="text/javascript" src="/web/static/scripts/interactive_map.js"></script>
 }
 
-templ sections(language string, phrases map[string]map[string]string) {
-	@carousel(language, phrases)
-	@aboutUs(language, phrases)
-	@findUs(language, phrases)
-	@services(language, phrases)
-	@contactUs(language, phrases)
+templ sections(language, theme string, phrases map[string]map[string]string) {
+	@carousel(language, theme, phrases)
+	@aboutUs(language, theme, phrases)
+	@findUs(language, theme, phrases)
+	@services(language, theme, phrases)
+	@contactUs(language, theme, phrases)
 }
 
-templ Handler(route, icon, language  string) {
-	@base.Base(route, icon, phrases, language, styles(), scripts(), sections(language, phrases))
+templ Handler(route, icon, language, theme  string) {
+	@base.Base(route, icon, phrases, language, theme, styles(), scripts(), sections(language, theme, phrases))
 }
