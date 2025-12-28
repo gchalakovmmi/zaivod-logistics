@@ -13,7 +13,7 @@ clear:
 
 build:
 	@echo "=== Building Binary ==="
-	@templ generate && go build -o cmd/app/$(BINARY_NAME) cmd/app/main.go
+	@templ generate && CGO_ENABLED=0 go build -o cmd/app/$(BINARY_NAME) cmd/app/main.go
 
 clean:
 	@echo "Cleaning binaries and generated files..."
@@ -25,7 +25,7 @@ run:
 	# export $$(grep -v '^#' .env | xargs) && ./cmd/app/$(BINARY_NAME)
 	@eval "$$(sed -n '/^[^#]/ s/^/export /p' .env)" && ./cmd/app/$(BINARY_NAME)
 
-app:
+app:	build
 	@echo "=== Building and Running App ==="
 	@docker compose up -d --build app
 
@@ -40,9 +40,8 @@ all: app
 
 push: app
 	@echo "=== Push App Docker Image ==="
-	@docker tag $(IMAGE) $(DREG)/$(IMAGE):latest
+	@docker tag $(APP_IMAGE) $(DREG)/$(APP_IMAGE):latest
 	@docker push $(DREG)/$(APP_IMAGE):latest
-	@docker push $(DREG)/$(DATABASE_IMAGE):latest
 	@ssh -i $(LINUX_SSH_KEY) $(LINUX_USER)@$(DOMAIN)
 
 up:
