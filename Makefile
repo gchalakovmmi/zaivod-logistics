@@ -1,9 +1,10 @@
 NAME := zaivod-logistics
 APP_IMAGE := zaivod-logistics-app
-DREG := dreg.pulpudev.com
+DREG := dreg.buldev.com
 DOMAIN := logistics.zaivod.com
 BINARY_NAME := app
-LINUX_USER := root
+LINUX_USER := gchalakov
+LINUX_SSH_KEY := ~/.ssh/chalusrv_rsa
 
 .PHONY: clear build clean run app app-logs app-connect all up down restart
 
@@ -15,13 +16,14 @@ build:
 	@templ generate && go build -o cmd/app/$(BINARY_NAME) cmd/app/main.go
 
 clean:
-		@echo "Cleaning binaries and generated files..."
-		rm cmd/app/app
-		find . -name "*_templ.go" -delete
+	@echo "Cleaning binaries and generated files..."
+	rm cmd/app/app
+	find . -name "*_templ.go" -delete
 
 run:
 	@echo "=== Running Binary ==="
-	export $$(grep -v '^#' .env | xargs) && ./cmd/app/$(BINARY_NAME)
+	# export $$(grep -v '^#' .env | xargs) && ./cmd/app/$(BINARY_NAME)
+	@eval "$$(sed -n '/^[^#]/ s/^/export /p' .env)" && ./cmd/app/$(BINARY_NAME)
 
 app:
 	@echo "=== Building and Running App ==="
@@ -41,7 +43,7 @@ push: app
 	@docker tag $(IMAGE) $(DREG)/$(IMAGE):latest
 	@docker push $(DREG)/$(APP_IMAGE):latest
 	@docker push $(DREG)/$(DATABASE_IMAGE):latest
-	@ssh $(LINUX_USER)@$(DOMAIN)
+	@ssh -i $(LINUX_SSH_KEY) $(LINUX_USER)@$(DOMAIN)
 
 up:
 	docker compose up -d
