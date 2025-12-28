@@ -9,7 +9,7 @@ templ contactUs(language, theme string, phrases map[string]map[string]string) {
 			</p>
 		</div>
 		<div class="row justify-content-center">
-			<form class="row g-3">
+			<form action={templ.URL("/home/send-message/"+language+"/"+theme)} class="row g-3">
 				<div class="col-md-12">
 					<label for="company" class="form-label">{ phrases[language]["contacts-company"] }</label>
 					<input type="text" class="form-control" name="company" id="company">
