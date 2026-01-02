@@ -21,6 +21,9 @@ func (s *Server) CreateHandlers() http.Handler {
 	mux.Handle("/web/static/",				http.StripPrefix("/web/static/", http.FileServer(http.Dir("./web/static"))))
 
 	mux.Handle("/health",					handlers.Health())
+	mux.Handle("/google3d4b8e47f66457f9.html",		handlers.GoogleVerification())
+	mux.Handle("/sitemap.xml",				handlers.Sitemap())
+	mux.Handle("/robots.txt",				handlers.Robots())
 	mux.Handle("/home/{language}/{theme}",			handlers.Home("/home", "/web/static/icons/favicon.ico"))
 	mux.Handle("/home/send-message/{language}/{theme}",	handlers.SendMessage())
 
