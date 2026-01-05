@@ -2,6 +2,7 @@ package base
 
 var phrases = map[string]map[string]string{
 	"bg": {
+		"head-description": "Заивод Логистикс, вашия доверен партньор в международния транспорт.",
 		"navbar-home": "Начало",
 		"navbar-services": "Услуги",
 		"navbar-about": "За нас",
@@ -14,6 +15,7 @@ var phrases = map[string]map[string]string{
 		"": "",
 	},
 	"en": {
+		"head-description": "Zaivod Logistics, your trusted parthner in international trade.",
 		"navbar-home": "Home",
 		"navbar-services": "Services", 
 		"navbar-about": "About",
@@ -26,6 +28,7 @@ var phrases = map[string]map[string]string{
 		"": "",
 	},
 	"ps": {
+		"head-description": "زود لوژستیک، په نړیواله سوداګرۍ کې ستاسو باوري ملګری.",
 		"navbar-home": "کور",
 		"navbar-services": "خدمتونه",
 		"navbar-about": "زموږ په اړه",
@@ -33,7 +36,7 @@ var phrases = map[string]map[string]string{
 		"navbar-contacts": "اړیکې",
 		"navbar-transport": "د بار لېږد",
 		"navbar-cars": "د موټرو سوداګري",
-		"footer-copyright": "© 2026 ????????????????????",
+		"footer-copyright": "© 2026 زایوډ لوجیستیک ل.",
 		"": "",
 	},
 }
