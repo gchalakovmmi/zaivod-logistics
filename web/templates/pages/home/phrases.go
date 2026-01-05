@@ -2,6 +2,7 @@ package home
 
 var phrases = map[string]map[string]string{
 	"bg": {
+		"head-description": "Заивод Логистикс, вашия доверен партньор в международния транспорт.",
 		"title": "Заивод Логистикс",
 		"carousel-title": "Помагам ви да растете",
 		"carousel-caption-1": "Помагаме Ви да растете. Ние сме решени да ви предоставим най-доброто, за да можем да растем заедно.",
@@ -28,6 +29,7 @@ var phrases = map[string]map[string]string{
 		"contacts-submit": "Изпрати",
 	},
 	"en": {
+		"head-description": "Zaivod Logistics, your trusted parthner in international trade.",
 		"title": "Zaivod Logistics",
 		"carousel-title": "Helping you grow",
 		"carousel-caption-1": "Helping you grow. We are determined to provide you with the best so we can grow together.",
@@ -54,6 +56,7 @@ var phrases = map[string]map[string]string{
 		"contacts-submit": "Send",
 	},
 	"ps": {
+		"head-description": "زود لوژستیک، په نړیواله سوداګرۍ کې ستاسو باوري ملګری.",
 		"title": "زېووډ لوژستیکس",
 		"carousel-title": "ستاسو د ودې مرسته",
 		"carousel-caption-1": "ستاسو د ودې مرسته. موږ په دې مصمم یو چې تاسو ته ترټولو غوره خدمت وړاندې کړو ترڅو موږ یوځای وده وکړو.",
