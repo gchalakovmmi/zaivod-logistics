@@ -9,6 +9,11 @@ var phrases = map[string]map[string]string{
 		"navbar-contacts": "Контакти",
 		"navbar-transport": "Транспортиране на стоки",
 		"navbar-cars": "Търговия с автомобили",
+		"navbar-quote": "Получи Оферта",
+		
+		"language-english": "English",
+		"language-bulgarian": "Български",
+		"language-pashto": "پښتو",
 
 		"footer-copyright": "© 2026 Заивод Логистикс, ООД",
 		"": "",
@@ -21,6 +26,11 @@ var phrases = map[string]map[string]string{
 		"navbar-contacts": "Contacts",
 		"navbar-transport": "Cargo Transport",
 		"navbar-cars": "Car Trading",
+		"navbar-quote": "Get Quote",
+		
+		"language-english": "English",
+		"language-bulgarian": "Bulgarian",
+		"language-pashto": "Pashto",
 
 		"footer-copyright": "© 2026 Zaivod Logistics LTD",
 		"": "",
@@ -33,6 +43,12 @@ var phrases = map[string]map[string]string{
 		"navbar-contacts": "اړیکې",
 		"navbar-transport": "د بار لېږد",
 		"navbar-cars": "د موټرو سوداګري",
+		"navbar-quote": "وړاندیز ترلاسه کړئ",
+		
+		"language-english": "انګلیسي",
+		"language-bulgarian": "بلغاریایي",
+		"language-pashto": "پښتو",
+
 		"footer-copyright": "© 2026 زایوډ لوجیستیک ل.",
 		"": "",
 	},

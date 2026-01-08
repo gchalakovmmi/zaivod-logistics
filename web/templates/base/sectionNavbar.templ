@@ -1,74 +1,69 @@
 package base
 
-import "strings"
-
 templ navbar(route, language, theme string) {
-	<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary" style="transition: transform 0.3s;">
-		<div class="container-fluid">
+	<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm py-2" data-bs-theme={ theme }>
+		<div class="container">
 			<a class="navbar-brand" href="#">
-				<img src="/web/static/images/logo.webp" alt="logo" style="height: 44px; border-radius: 10px; border: 1px solid black;">
+				<img src="/web/static/images/logo.webp" alt="Zaivod Logistics" height="40" class="logo-rounded">
 			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+			
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse text-center" id="navbarScroll">
-				<ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+			
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav mx-auto">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#home">{ phrases[language]["navbar-home"] }</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							{ phrases[language]["navbar-services"] }
-						</a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#services">
-								{ phrases[language]["navbar-transport"] }
-							</a></li>
-							<li><a class="dropdown-item" href="#services">
-								{ phrases[language]["navbar-cars"] }
-							</a></li>
-						</ul>
+						<a class="nav-link active fw-semibold" href={ templ.SafeURL("/home/" + language + "/" + theme) }>{ phrases[language]["navbar-home"] }</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#about-us">{ phrases[language]["navbar-about"] }</a>
+						<a class="nav-link fw-semibold" href="#services">{ phrases[language]["navbar-services"] }</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#find-us">{ phrases[language]["navbar-find"] }</a>
+						<a class="nav-link fw-semibold" href="#about">{ phrases[language]["navbar-about"] }</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#contacts">{ phrases[language]["navbar-contacts"] }</a>
-					</li>
-					<li class="nav-item dropdown me-5">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<img src={ templ.SafeURL("/web/static/icons/" + strings.ToUpper(language) + ".ico") } alt={ language } style="height: 22px; width: 22px; border-radius: 10px;">
-						</a>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href={ templ.SafeURL(route + "/bg/" + theme) }>
-								<img src="/web/static/icons/BG.ico" alt="Български" style="height: 22px; width: 22px; border-radius: 10px;">
-								Български
-							</a></li>
-							<li><a class="dropdown-item" href={ templ.SafeURL(route + "/en/" + theme) }>
-								<img src="/web/static/icons/EN.ico" alt="English" style="height: 22px; width: 22px; border-radius: 10px;">
-								English
-							</a></li>
-							<li><a class="dropdown-item" href={ templ.SafeURL(route + "/ps/" + theme) }>
-								<img src="/web/static/icons/PS.ico" alt="ﭖښﺕﻭ" style="height: 22px; width: 22px; border-radius: 10px;">
-								ﭖښﺕﻭ
-							</a></li>
-						</ul>
-					</li>
-					<li class="nav-item" style="background-color: #cccccc; border-radius: 10px; width: fit-content; padding: 0px 9px 0px 9px;">
-						if theme == "light" {
-						<a class="nav-link" href={ templ.URL(route + "/" + language + "/dark") }>
-							<img src="/web/static/icons/theme.ico" alt="🌙 Dark Mode" style="width: 22px; height: 22px;">
-						</a>
-						} else {
-						<a class="nav-link" href={ templ.URL(route + "/" + language + "/light") }>
-							<img src="/web/static/icons/theme.ico" alt="☀️ Light Mode" style="width: 22px; height: 22px;">
-						</a>
-						}
+						<a class="nav-link fw-semibold" href="#contact">{ phrases[language]["navbar-contacts"] }</a>
 					</li>
 				</ul>
+				
+				<div class="d-flex align-items-center gap-3">
+					<!-- Language Selector -->
+					<div class="dropdown">
+						<button class="btn btn-outline-secondary dropdown-toggle d-flex align-items-center gap-2" 
+								type="button" data-bs-toggle="dropdown">
+							if language == "en" {
+								<img src="/web/static/icons/EN.ico" alt="English" width="20" height="15" style="border-radius: 3px;"> { phrases[language]["language-english"] }
+							} else if language == "bg" {
+								<img src="/web/static/icons/BG.ico" alt="Bulgarian" width="20" height="15" style="border-radius: 3px;"> { phrases[language]["language-bulgarian"] }
+							} else if language == "ps" {
+								<img src="/web/static/icons/PS.ico" alt="Pashto" width="20" height="15" style="border-radius: 3px;"> { phrases[language]["language-pashto"] }
+							}
+						</button>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item d-flex align-items-center gap-2" href={ templ.SafeURL(route + "/bg/" + theme) }>
+								<img src="/web/static/icons/BG.ico" alt="Bulgarian" width="20" height="15" style="border-radius: 3px;"> { phrases["bg"]["language-bulgarian"] }
+							</a></li>
+							<li><a class="dropdown-item d-flex align-items-center gap-2" href={ templ.SafeURL(route + "/en/" + theme) }>
+								<img src="/web/static/icons/EN.ico" alt="English" width="20" height="15" style="border-radius: 3px;"> { phrases["en"]["language-english"] }
+							</a></li>
+							<li><a class="dropdown-item d-flex align-items-center gap-2" href={ templ.SafeURL(route + "/ps/" + theme) }>
+								<img src="/web/static/icons/PS.ico" alt="Pashto" width="20" height="15" style="border-radius: 3px;"> { phrases["ps"]["language-pashto"] }
+							</a></li>
+						</ul>
+					</div>
+					
+					<!-- Theme Toggle -->
+					<a class="btn btn-outline-secondary" href={ templ.URL(route + "/" + language + "/" + func() string { if theme == "light" { return "dark" } else { return "light" } }()) }>
+						if theme == "light" {
+							<i class="bi bi-moon-fill"></i>
+						} else {
+							<i class="bi bi-sun-fill"></i>
+						}
+					</a>
+					
+					<a href="#contact" class="btn btn-primary rounded-pill px-4">{ phrases[language]["navbar-quote"] }</a>
+				</div>
 			</div>
 		</div>
 	</nav>
