@@ -1,0 +1,123 @@
+/* Footer specific CSS */
+footer {
+	--primary: #1B5E20; /* Dark Green */
+	--primary-dark: #0D4012;
+	--accent: #4CAF50;
+}
+
+.bg-primary-dark {
+	background-color: var(--primary) !important;
+}
+
+.footer-icon-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	text-decoration: none;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.1);
+	transition: all 0.3s ease;
+}
+
+.footer-icon-link:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+	transform: translateY(-3px);
+}
+
+.footer-icon-link img {
+	width: 32px;
+	height: 32px;
+	object-fit: contain;
+}
+
+.footer-icon-link i {
+	font-size: 24px;
+	color: white;
+}
+
+.logo-rounded {
+	border-radius: 12px !important;
+}
+
+/* Footer text and links */
+footer .opacity-75 {
+	opacity: 0.75 !important;
+}
+
+footer .text-white {
+	color: white !important;
+}
+
+footer .text-decoration-none {
+	text-decoration: none !important;
+}
+
+footer .text-decoration-none:hover {
+	text-decoration: underline !important;
+	opacity: 1;
+}
+
+footer ul.list-unstyled li a {
+	transition: opacity 0.3s ease;
+	opacity: 0.75;
+}
+
+footer ul.list-unstyled li a:hover {
+	opacity: 1;
+}
+
+/* Footer hr */
+footer hr {
+	border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Footer headings */
+footer h5 {
+	color: white !important;
+	font-weight: 700;
+}
+
+/* Dark theme specific footer adjustments */
+[data-bs-theme="dark"] .bg-primary-dark {
+	background-color: var(--primary) !important; /* Keep same color in dark mode */
+}
+
+[data-bs-theme="dark"] .footer-icon-link {
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-bs-theme="dark"] .footer-icon-link:hover {
+	background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+	footer .row.g-4 > div {
+		margin-bottom: 2rem;
+	}
+	
+	footer .row.g-4 > div:last-child {
+		margin-bottom: 0;
+	}
+	
+	footer .d-flex.gap-3 {
+		justify-content: center;
+	}
+}
+
+@media (max-width: 767.98px) {
+	footer {
+		text-align: center;
+	}
+	
+	footer .logo-rounded {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	footer ul.list-unstyled {
+		padding-left: 0;
+	}
+}

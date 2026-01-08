@@ -11,11 +11,10 @@ var phrases = map[string]map[string]string{
 		"navbar-cars": "Търговия с автомобили",
 		"navbar-quote": "Получи Оферта",
 		
-		"language-english": "English",
-		"language-bulgarian": "Български",
-		"language-pashto": "پښتو",
-
 		"footer-copyright": "© 2026 Заивод Логистикс, ООД",
+		"footer-quick-links": "Бързи Връзки",
+		"footer-our-services": "Нашите Услуги",
+		"footer-description": "Вашият надежден партньор за международни логистични и транспортни решения в Европа и Азия.",
 		"": "",
 	},
 	"en": {
@@ -28,11 +27,10 @@ var phrases = map[string]map[string]string{
 		"navbar-cars": "Car Trading",
 		"navbar-quote": "Get Quote",
 		
-		"language-english": "English",
-		"language-bulgarian": "Bulgarian",
-		"language-pashto": "Pashto",
-
 		"footer-copyright": "© 2026 Zaivod Logistics LTD",
+		"footer-quick-links": "Quick Links",
+		"footer-our-services": "Our Services",
+		"footer-description": "Your reliable partner for international logistics and transportation solutions across Europe and Asia.",
 		"": "",
 	},
 	"ps": {
@@ -45,11 +43,10 @@ var phrases = map[string]map[string]string{
 		"navbar-cars": "د موټرو سوداګري",
 		"navbar-quote": "وړاندیز ترلاسه کړئ",
 		
-		"language-english": "انګلیسي",
-		"language-bulgarian": "بلغاریایي",
-		"language-pashto": "پښتو",
-
 		"footer-copyright": "© 2026 زایوډ لوجیستیک ل.",
+		"footer-quick-links": "چټکې لینکونه",
+		"footer-our-services": "زموږ خدمتونه",
+		"footer-description": "ستاسې په اروپا او آسیا کې د نړیوالې لوژیستیکي او ترانسپورټ حلونو لپاره د باور وړ شریک.",
 		"": "",
 	},
 }
