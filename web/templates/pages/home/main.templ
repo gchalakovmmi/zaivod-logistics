@@ -6,6 +6,7 @@ templ styles() {
 	<link rel="stylesheet" href="/web/static/styles/hero.css"/>
 	<link rel="stylesheet" href="/web/static/styles/stats.css"/>
 	<link rel="stylesheet" href="/web/static/styles/services.css"/>
+	<link rel="stylesheet" href="/web/static/styles/contact.css"/>
 }
 templ scripts() {
 }
@@ -15,7 +16,7 @@ templ sections(language, theme string, phrases map[string]map[string]string) {
 	@stats(language, theme, phrases)
 	@services(language, theme, phrases)
 	@about(language, theme, phrases)
-	@contactUs(language, theme, phrases)
+	@contact(language, theme, phrases)
 }
 
 templ Handler(route, icon, language, theme  string) {

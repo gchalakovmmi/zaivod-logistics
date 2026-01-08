@@ -6,6 +6,7 @@ import (
 	"os"
 	"log"
 	"net/smtp"
+	"strings"
 )
 
 func SendMessage() http.Handler {
@@ -27,14 +28,20 @@ func SendMessage() http.Handler {
 
 		auth := smtp.PlainAuth("", os.Getenv("SENDER_EMAIL"), os.Getenv("PASSWORD"), os.Getenv("SMTP_HOST"))
 
-		msg := []byte("To: "+os.Getenv("RECIPIENT_EMAIL")+"\r\n" +
-			"Subject: Message from "+first_name+" "+last_name+"\r\n" +
+		msg := []byte("To: " + os.Getenv("RECIPIENT_EMAIL") + "\r\n" +
+			"Subject: New Contact Form Submission from " + first_name + " " + last_name + "\r\n" +
+			"MIME-Version: 1.0\r\n" +
+			"Content-Type: text/html; charset=\"UTF-8\"\r\n" +
 			"\r\n" +
-			"From: "+first_name+" "+last_name+"\r\n" +
-			"Company: "+company+"\r\n" +
-			"Email: "+email+"\r\n" +
-			"Phone: "+phone+"\r\n" +
-			"Message:\r\n"+message+"\r\n")
+			"<html><body>" +
+			"<h2>New Contact Form Submission</h2>" +
+			"<p><strong>From:</strong> " + first_name + " " + last_name + "</p>" +
+			"<p><strong>Company:</strong> " + company + "</p>" +
+			"<p><strong>Email:</strong> " + email + "</p>" +
+			"<p><strong>Phone:</strong> " + phone + "</p>" +
+			"<p><strong>Message:</strong></p>" +
+			"<p>" + strings.ReplaceAll(message, "\n", "<br>") + "</p>" +
+			"</body></html>")
 
 		err := smtp.SendMail(
 			os.Getenv("SMTP_HOST")+":"+os.Getenv("SMTP_PORT"), 
