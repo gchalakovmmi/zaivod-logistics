@@ -1,52 +1,52 @@
 package base
 
 templ footer(language, theme string) {
-	<footer class="bg-primary-dark text-white py-5" data-bs-theme={ theme }>
-		<div class="container">
-			<div class="row g-4">
-				<div class="col-lg-4">
-					<img src="/web/static/images/logo.webp" 
-						 alt="Zaivod Logistics" height="40" class="logo-rounded mb-4">
-					<p class="opacity-75 mb-4">
-						{ phrases[language]["footer-description"] }
-					</p>
-					<div class="d-flex gap-3">
-						<a href="https://www.mobile.bg/" target="_blank" class="footer-icon-link">
-							<img src="/web/static/icons/mobilebg.ico" alt="mobile.bg">
-						</a>
-						<a href="https://www.jobs.bg/" target="_blank" class="footer-icon-link">
-							<img src="/web/static/icons/jobsbg.ico" alt="jobs.bg">
-						</a>
-						<a href="linkedin.com" class="footer-icon-link">
-							<i class="bi bi-linkedin"></i>
-						</a>
-					</div>
-				</div>
-				
-				<div class="col-lg-4">
-					<h5 class="fw-bold mb-4">{ phrases[language]["footer-quick-links"] }</h5>
-					<ul class="list-unstyled">
-						<li class="mb-2"><a href={ templ.SafeURL("/home/" + language + "/" + theme) + "#" } class="text-white text-decoration-none">{ phrases[language]["navbar-home"] }</a></li>
-						<li class="mb-2"><a href={ templ.SafeURL("/home/" + language + "/" + theme) + "#services" } class="text-white text-decoration-none">{ phrases[language]["navbar-services"] }</a></li>
-						<li class="mb-2"><a href={ templ.SafeURL("/home/" + language + "/" + theme) + "#about" } class="text-white text-decoration-none">{ phrases[language]["navbar-about"] }</a></li>
-						<li class="mb-2"><a href={ templ.SafeURL("/home/" + language + "/" + theme) + "#contact" } class="text-white text-decoration-none">{ phrases[language]["navbar-contacts"] }</a></li>
-					</ul>
-				</div>
-				
-				<div class="col-lg-4">
-					<h5 class="fw-bold mb-4">{ phrases[language]["footer-our-services"] }</h5>
-					<ul class="list-unstyled">
-						<li class="mb-2"><a href={ templ.SafeURL("/home/" + language + "/" + theme) + "#services" } class="text-white text-decoration-none">{ phrases[language]["navbar-transport"] }</a></li>
-						<li class="mb-2"><a href={ templ.SafeURL("/home/" + language + "/" + theme) + "#services" } class="text-white text-decoration-none">{ phrases[language]["navbar-cars"] }</a></li>
-					</ul>
+<footer class="bg-primary-dark text-white py-5" data-bs-theme={ theme }>
+	<div class="container">
+		<div class="row g-4">
+			<div class="col-lg-4">
+				<img src="/web/static/images/logo.webp" 
+					 alt="Zaivod Logistics" height="40" class="logo-rounded mb-4">
+				<p class="opacity-75 mb-4">
+					{ phrases[language]["footer-description"] }
+				</p>
+				<div class="d-flex gap-3">
+					<a href="https://www.mobile.bg/" target="_blank" class="footer-icon-link">
+						<img src="/web/static/icons/mobilebg.ico" alt="mobile.bg">
+					</a>
+					<a href="https://www.jobs.bg/" target="_blank" class="footer-icon-link">
+						<img src="/web/static/icons/jobsbg.ico" alt="jobs.bg">
+					</a>
+					<a href="linkedin.com" class="footer-icon-link">
+						<i class="bi bi-linkedin"></i>
+					</a>
 				</div>
 			</div>
 			
-			<hr class="my-5 opacity-25">
+			<div class="col-lg-4">
+				<h5 class="fw-bold mb-4">{ phrases[language]["footer-quick-links"] }</h5>
+				<ul class="list-unstyled">
+					<li class="mb-2"><a href={ templ.SafeURL("/home/" + language + "/" + theme) + "#" } class="text-white text-decoration-none">{ phrases[language]["navbar-home"] }</a></li>
+					<li class="mb-2"><a href={ templ.SafeURL("/home/" + language + "/" + theme) + "#services" } class="text-white text-decoration-none">{ phrases[language]["navbar-services"] }</a></li>
+					<li class="mb-2"><a href={ templ.SafeURL("/home/" + language + "/" + theme) + "#about" } class="text-white text-decoration-none">{ phrases[language]["navbar-about"] }</a></li>
+					<li class="mb-2"><a href={ templ.SafeURL("/home/" + language + "/" + theme) + "#contact" } class="text-white text-decoration-none">{ phrases[language]["navbar-contacts"] }</a></li>
+				</ul>
+			</div>
 			
-			<div class="text-center">
-				<p class="mb-0 opacity-75">{ phrases[language]["footer-copyright"] }</p>
+			<div class="col-lg-4">
+				<h5 class="fw-bold mb-4">{ phrases[language]["footer-our-services"] }</h5>
+				<ul class="list-unstyled">
+					<li class="mb-2"><a href={ templ.SafeURL("/home/" + language + "/" + theme) + "#services" } class="text-white text-decoration-none">{ phrases[language]["footer-transport"] }</a></li>
+					<li class="mb-2"><a href={ templ.SafeURL("/home/" + language + "/" + theme) + "#services" } class="text-white text-decoration-none">{ phrases[language]["footer-cars"] }</a></li>
+				</ul>
 			</div>
 		</div>
-	</footer>
+		
+		<hr class="my-5 opacity-25">
+		
+		<div class="text-center">
+			<p class="mb-0 opacity-75">{ phrases[language]["footer-copyright"] }</p>
+		</div>
+	</div>
+</footer>
 }
