@@ -5,6 +5,7 @@ import ( "zaivod-logistics/web/templates/base" )
 templ styles() {
 	<link rel="stylesheet" href="/web/static/styles/hero.css"/>
 	<link rel="stylesheet" href="/web/static/styles/stats.css"/>
+	<link rel="stylesheet" href="/web/static/styles/services.css"/>
 }
 templ scripts() {
 }
@@ -12,7 +13,6 @@ templ scripts() {
 templ sections(language, theme string, phrases map[string]map[string]string) {
 	@hero(language, theme, phrases)
 	@stats(language, theme, phrases)
-	@findUs(language, theme, phrases)
 	@services(language, theme, phrases)
 	@contactUs(language, theme, phrases)
 }

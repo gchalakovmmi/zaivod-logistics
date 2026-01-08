@@ -1,20 +1,45 @@
-/* Services section styles */
-.services-card {
-	height: 400px;
-	background-color: #cccccc;
-	border-radius: 10px;
-	border: 1px solid black;
-	transition: transform 0.2s ease-in-out;
+/* Services Section CSS */
+#services .bg-white {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.services-card img {
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
-	border: 1px solid black;
+#services .bg-white:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.services-card:hover {
-	transform: scale(1.05);
-	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+/* Dark theme adjustments */
+[data-bs-theme="dark"] #services .bg-white {
+	background-color: var(--bs-tertiary-bg) !important;
+	border-color: var(--bs-border-color) !important;
+}
+
+[data-bs-theme="dark"] #services .text-muted {
+	color: #adb5bd !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+	#services .row.g-4 > div {
+		margin-bottom: 2rem;
+	}
+	
+	#services .row.g-4 > div:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 767.98px) {
+	#services .bg-primary.rounded-circle {
+		width: 60px !important;
+		height: 60px !important;
+	}
+	
+	#services .bg-primary.rounded-circle i {
+		font-size: 1.5rem !important;
+	}
+	
+	#services h4 {
+		font-size: 1.25rem;
+	}
 }
