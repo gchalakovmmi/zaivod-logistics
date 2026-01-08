@@ -3,7 +3,7 @@ package home
 import ( "zaivod-logistics/web/templates/base" )
 
 templ styles() {
-	<link rel="stylesheet" href="/web/static/styles/services.css"/>
+	<link rel="stylesheet" href="/web/static/styles/hero.css"/>
 }
 templ scripts() {
 	<script type="text/javascript" src="/web/static/scripts/map.js"></script>
@@ -11,7 +11,7 @@ templ scripts() {
 }
 
 templ sections(language, theme string, phrases map[string]map[string]string) {
-	@carousel(language, theme, phrases)
+	@hero(language, theme, phrases)
 	@aboutUs(language, theme, phrases)
 	@findUs(language, theme, phrases)
 	@services(language, theme, phrases)

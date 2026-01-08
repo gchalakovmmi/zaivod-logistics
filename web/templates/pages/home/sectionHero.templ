@@ -1,0 +1,27 @@
+package home
+
+templ hero(language, theme string, phrases map[string]map[string]string) {
+<section class="hero-section position-relative" id="home" data-bs-theme={ theme }>
+	<!-- Background Image -->
+	<div class="hero-background position-absolute w-100 h-100">
+		<img src="/web/static/images/hero.webp" alt="Logistics and Transportation" class="hero-bg-image w-100 h-100">
+		<div class="hero-overlay position-absolute w-100 h-100"></div>
+	</div>
+	
+	<!-- Content -->
+	<div class="container position-relative z-1">
+		<div class="row align-items-center min-vh-100">
+			<div class="col-lg-8 mx-auto text-center text-white">
+				<h1 class="display-4 fw-bold mb-4">{ phrases[language]["hero-title"] }</h1>
+				<p class="lead mb-4">
+					{ phrases[language]["hero-description"] }
+				</p>
+				<div class="d-flex flex-wrap gap-3 justify-content-center">
+					<a href="#contact" class="btn btn-primary btn-lg rounded-pill px-5">{ phrases[language]["hero-button-get-started"] }</a>
+					<a href="#services" class="btn btn-outline-light btn-lg rounded-pill px-5">{ phrases[language]["hero-button-our-services"] }</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+}

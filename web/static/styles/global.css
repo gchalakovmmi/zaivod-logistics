@@ -1,0 +1,43 @@
+:root {
+	--primary: #1B5E20; /* Dark Green */
+	--primary-dark: #0D4012;
+	--accent: #4CAF50;
+}
+
+[data-bs-theme="dark"] {
+	--bs-body-bg: #121212;
+	--bs-body-color: #ffffff;
+	--bs-secondary-bg: #1e1e1e;
+	--bs-tertiary-bg: #2d2d2d;
+	--bs-border-color: #495057;
+}
+
+[data-bs-theme="dark"] .bg-white {
+	background-color: var(--bs-tertiary-bg) !important;
+}
+
+[data-bs-theme="dark"] .bg-light {
+	background-color: var(--bs-secondary-bg) !important;
+}
+
+[data-bs-theme="dark"] .text-muted {
+	color: #adb5bd !important;
+}
+
+[data-bs-theme="dark"] .text-dark {
+	color: white !important;
+}
+
+.btn-primary {
+	background-color: var(--primary) !important;
+	border-color: var(--primary) !important;
+}
+
+.btn-primary:hover {
+	background-color: var(--primary-dark) !important;
+	border-color: var(--primary-dark) !important;
+}
+
+.bg-primary-dark {
+	background-color: var(--primary) !important;
+}
