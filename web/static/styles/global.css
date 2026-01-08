@@ -68,10 +68,10 @@
 }
 
 .opacity-75 {
-    opacity: 0.75 !important;
+	opacity: 0.75 !important;
 }
 
 .form-control:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 0.25rem rgba(27, 94, 32, 0.25);
+	border-color: var(--primary);
+	box-shadow: 0 0 0 0.25rem rgba(27, 94, 32, 0.25);
 }
