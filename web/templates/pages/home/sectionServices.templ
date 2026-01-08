@@ -1,46 +1,54 @@
 package home
 
 templ services(language, theme string, phrases map[string]map[string]string) {
-	<div class="container" id="services">
-		<div class="row justify-content-center">
-			<h1 class="col-10 text-center">{ phrases[language]["services-title"] }</h1>
+<section id="services" class="py-5">
+	<div class="container">
+		<div class="text-center mb-5">
+			<h2 class="fw-bold mb-3">{ phrases[language]["services-title"] }</h2>
+			<p class="text-muted">{ phrases[language]["services-subtitle"] }</p>
 		</div>
-		<div class="row justify-content-center">
-			<p class="col-10 text-center">{ phrases[language]["services-description"] }</p>
-		</div>
-	</div>
-	
-	<div class="container" id="services">
-		<div class="row justify-content-center">
-			<div class="col-md-5 p-0 m-3 services-card">
-				<div style="width: 100%; height: 60%; overflow: hidden; border-radius: 10px 10px 0px 0px;">
-					<img src="https://images.alphacoders.com/504/504216.jpg" class="d-block w-100" alt="Truck">
-				</div>
-				<div class="row" style="width: 100%; height: 40%; overflow-x: hidden; overflow-y: auto; display: flex; justify-content: center; align-items: center;">
-					<h4 class="text-center" style="color: black;">
-						{ phrases[language]["services-transport-title"] }
-					</h4>
-					<p class="text-center" style="color: black;">
-						{ phrases[language]["services-transport-description"] }
-					</p>
+		
+		<div class="row g-4">
+			<!-- Cargo Transport Card -->
+			<div class="col-lg-6">
+				<div class="bg-white rounded-3 border p-4 h-100">
+					<div class="d-flex justify-content-center mb-4">
+						<div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+							<i class="bi bi-truck text-white fs-3"></i>
+						</div>
+					</div>
+					<div class="text-center">
+						<h4 class="fw-bold mb-3">{ phrases[language]["services-transport-title"] }</h4>
+						<p class="text-muted mb-4">
+							{ phrases[language]["services-transport-description"] }
+						</p>
+						<a href="#contact" class="service-link fw-semibold text-primary">
+							{ phrases[language]["services-contact-us"] } <i class="bi bi-arrow-right ms-1"></i>
+						</a>
+					</div>
 				</div>
 			</div>
 			
-			<div class="col-md-5 p-0 m-3 services-card">
-				<div style="width: 100%; height: 60%; overflow: hidden; border-radius: 10px 10px 0px 0px;">
-					<img src="https://news-site-za.s3.af-south-1.amazonaws.com/images/2024/09/FordMustang2024_003.jpg" class="d-block w-100" alt="Car">
-				</div>
-				<div class="row" style="width: 100%; height: 40%; overflow-x: hidden; overflow-y: auto; display: flex; justify-content: center; align-items: center;">
-					<h4 class="text-center" style="color: black;">
-						{ phrases[language]["services-cars-title"] }
-					</h4>
-					<p class="text-center" style="color: black;">
-						{ phrases[language]["services-cars-description"] }
-					</p>
+			<!-- Vehicle Trading Card -->
+			<div class="col-lg-6">
+				<div class="bg-white rounded-3 border p-4 h-100">
+					<div class="d-flex justify-content-center mb-4">
+						<div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+							<i class="bi bi-car-front text-white fs-3"></i>
+						</div>
+					</div>
+					<div class="text-center">
+						<h4 class="fw-bold mb-3">{ phrases[language]["services-cars-title"] }</h4>
+						<p class="text-muted mb-4">
+							{ phrases[language]["services-cars-description"] }
+						</p>
+						<a href="#contact" class="service-link fw-semibold text-primary">
+							{ phrases[language]["services-contact-us"] } <i class="bi bi-arrow-right ms-1"></i>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-	<div class="mt-5 mb-5" style="background-color: #cccccc; height: 10px;"></div>
+</section>
 }

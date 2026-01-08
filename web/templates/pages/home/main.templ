@@ -3,19 +3,20 @@ package home
 import ( "zaivod-logistics/web/templates/base" )
 
 templ styles() {
+	<link rel="stylesheet" href="/web/static/styles/hero.css"/>
+	<link rel="stylesheet" href="/web/static/styles/stats.css"/>
 	<link rel="stylesheet" href="/web/static/styles/services.css"/>
+	<link rel="stylesheet" href="/web/static/styles/contact.css"/>
 }
 templ scripts() {
-	<script type="text/javascript" src="/web/static/scripts/map.js"></script>
-	<script type="text/javascript" src="/web/static/scripts/interactive_map.js"></script>
 }
 
 templ sections(language, theme string, phrases map[string]map[string]string) {
-	@carousel(language, theme, phrases)
-	@aboutUs(language, theme, phrases)
-	@findUs(language, theme, phrases)
+	@hero(language, theme, phrases)
+	@stats(language, theme, phrases)
 	@services(language, theme, phrases)
-	@contactUs(language, theme, phrases)
+	@about(language, theme, phrases)
+	@contact(language, theme, phrases)
 }
 
 templ Handler(route, icon, language, theme  string) {

@@ -1,0 +1,121 @@
+/* Navbar specific CSS */
+.navbar {
+	--primary: #1B5E20; /* Dark Green */
+	--primary-dark: #0D4012;
+	--accent: #4CAF50;
+}
+
+.navbar-light.bg-white {
+	background-color: var(--bs-white) !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: var(--bs-dark);
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+	color: var(--primary);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+	color: var(--primary);
+}
+
+.logo-rounded {
+	border-radius: 12px !important;
+}
+
+.btn-primary {
+	background-color: var(--primary);
+	border-color: var(--primary);
+}
+
+.btn-primary:hover {
+	background-color: var(--primary-dark);
+	border-color: var(--primary-dark);
+}
+
+.btn-outline-secondary {
+	border-color: var(--bs-border-color);
+	color: var(--bs-body-color);
+}
+
+.btn-outline-secondary:hover {
+	background-color: var(--bs-secondary-bg);
+	border-color: var(--bs-border-color);
+}
+
+/* Dark theme specific navbar adjustments */
+[data-bs-theme="dark"] .navbar {
+	background-color: var(--bs-tertiary-bg) !important;
+}
+
+[data-bs-theme="dark"] .navbar-light {
+	--bs-navbar-color: rgba(255, 255, 255, 0.75) !important;
+	--bs-navbar-hover-color: rgba(255, 255, 255, 1) !important;
+	--bs-navbar-active-color: rgba(255, 255, 255, 1) !important;
+}
+
+[data-bs-theme="dark"] .navbar-light .navbar-nav .nav-link {
+	color: rgba(255, 255, 255, 0.75);
+}
+
+[data-bs-theme="dark"] .navbar-light .navbar-nav .nav-link.active,
+[data-bs-theme="dark"] .navbar-light .navbar-nav .nav-link:hover {
+	color: rgba(255, 255, 255, 1);
+}
+
+[data-bs-theme="dark"] .navbar-light.bg-white {
+	background-color: var(--bs-tertiary-bg) !important;
+}
+
+[data-bs-theme="dark"] .btn-outline-secondary {
+	color: rgba(255, 255, 255, 0.75);
+	border-color: var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .btn-outline-secondary:hover {
+	background-color: var(--bs-secondary-bg);
+	color: rgba(255, 255, 255, 1);
+}
+
+/* Navbar dropdown adjustments */
+.dropdown-menu {
+	border-radius: 8px;
+	border: 1px solid var(--bs-border-color);
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-item {
+	padding: 0.5rem 1rem;
+}
+
+.dropdown-item:hover {
+	background-color: var(--bs-primary-bg-subtle);
+	color: var(--primary);
+}
+
+/* Ensure navbar stays on top of other content */
+.navbar.fixed-top {
+	z-index: 1030;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+	.navbar .d-flex.align-items-center.gap-3 {
+		margin-top: 1rem;
+		justify-content: center;
+		width: 100%;
+	}
+	
+	.navbar-collapse {
+		padding-bottom: 1rem;
+	}
+}
+
+/* Flag icon styling in language selector */
+.dropdown-toggle img,
+.dropdown-item img {
+	border-radius: 3px;
+	object-fit: cover;
+}

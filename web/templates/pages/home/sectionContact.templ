@@ -1,0 +1,90 @@
+package home
+
+templ contact(language, theme string, phrases map[string]map[string]string) {
+<section id="contact" class="py-5">
+	<div class="container">
+		<div class="text-center mb-5">
+			<h2 class="fw-bold mb-3">{ phrases[language]["contact-title"] }</h2>
+			<p class="text-muted">{ phrases[language]["contact-subtitle"] }</p>
+		</div>
+		
+		<div class="row g-5">
+			<!-- Contact Information (Left Column) -->
+			<div class="col-lg-5">
+				<div class="bg-primary-dark text-white p-4 rounded-3 h-100">
+					<h3 class="fw-bold mb-4">{ phrases[language]["contact-info-title"] }</h3>
+					
+					<div class="d-flex align-items-start mb-4">
+						<i class="bi bi-geo-alt fs-5 me-3"></i>
+						<div>
+							<h5 class="fw-semibold mb-1">{ phrases[language]["contact-location-title"] }</h5>
+							<p class="mb-0 opacity-75">{ phrases[language]["contact-location"] }</p>
+						</div>
+					</div>
+					
+					<div class="d-flex align-items-start mb-4">
+						<i class="bi bi-envelope fs-5 me-3"></i>
+						<div>
+							<h5 class="fw-semibold mb-1">{ phrases[language]["contact-email-title"] }</h5>
+							<p class="mb-0 opacity-75">{ phrases[language]["contact-email"] }</p>
+						</div>
+					</div>
+					
+					<div class="d-flex align-items-start mb-4">
+						<i class="bi bi-telephone fs-5 me-3"></i>
+						<div>
+							<h5 class="fw-semibold mb-1">{ phrases[language]["contact-phone-title"] }</h5>
+							<p class="mb-0 opacity-75">{ phrases[language]["contact-phone"] }</p>
+						</div>
+					</div>
+					
+					<div class="mt-5">
+						<h5 class="fw-semibold mb-3">{ phrases[language]["contact-hours-title"] }</h5>
+						<p class="opacity-75 mb-1">{ phrases[language]["contact-hours-weekdays"] }</p>
+						<p class="opacity-75">{ phrases[language]["contact-hours-saturday"] }</p>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Contact Form (Right Column) -->
+			<div class="col-lg-7">
+				<div class="bg-white p-4 rounded-3 border h-100">
+					<form action={ templ.URL("/home/send-message/" + language + "/" + theme) } method="POST">
+						<div class="row g-3">
+							<div class="col-md-6">
+								<label class="form-label fw-semibold">{ phrases[language]["contact-form-first-name"] } *</label>
+								<input type="text" class="form-control" name="first_name" required>
+							</div>
+							<div class="col-md-6">
+								<label class="form-label fw-semibold">{ phrases[language]["contact-form-last-name"] } *</label>
+								<input type="text" class="form-control" name="last_name" required>
+							</div>
+							<div class="col-md-6">
+								<label class="form-label fw-semibold">{ phrases[language]["contact-form-email"] } *</label>
+								<input type="email" class="form-control" name="email" required>
+							</div>
+							<div class="col-md-6">
+								<label class="form-label fw-semibold">{ phrases[language]["contact-form-phone"] }</label>
+								<input type="tel" class="form-control" name="phone">
+							</div>
+							<div class="col-12">
+								<label class="form-label fw-semibold">{ phrases[language]["contact-form-company"] }</label>
+								<input type="text" class="form-control" name="company">
+							</div>
+							<div class="col-12">
+								<label class="form-label fw-semibold">{ phrases[language]["contact-form-message"] } *</label>
+								<textarea class="form-control" name="message" rows="4" required></textarea>
+							</div>
+							<div class="col-12">
+								<button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill py-3">
+									{ phrases[language]["contact-form-submit"] } <i class="bi bi-arrow-right ms-2"></i>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+}
