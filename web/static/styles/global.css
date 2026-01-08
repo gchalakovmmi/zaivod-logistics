@@ -41,3 +41,28 @@
 .bg-primary-dark {
 	background-color: var(--primary) !important;
 }
+
+.text-primary {
+	color: var(--primary) !important;
+}
+
+.bg-primary {
+	background-color: var(--primary) !important;
+}
+
+.bg-accent {
+	background-color: var(--accent) !important;
+}
+
+.border-primary {
+	border-color: var(--primary) !important;
+}
+
+.service-link {
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.service-link:hover {
+	transform: translateX(5px);
+}

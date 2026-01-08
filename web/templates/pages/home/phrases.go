@@ -1,5 +1,4 @@
 package home
-
 var phrases = map[string]map[string]string{
 	"bg": {
 		"head-description": "Заивод Логистикс, вашия доверен партньор в международния транспорт.",
@@ -28,6 +27,10 @@ var phrases = map[string]map[string]string{
 		"contacts-phone": "Телефон",
 		"contacts-message": "Съобщение",
 		"contacts-submit": "Изпрати",
+		"stats-years-experience": "Години Опит",
+		"stats-happy-clients": "Доволни Клиенти", 
+		"stats-countries-served": "Обслужвани Държави",
+		"stats-on-time-delivery": "Навременна Доставка",
 	},
 	"en": {
 		"head-description": "Zaivod Logistics, your trusted parthner in international trade.",
@@ -56,6 +59,10 @@ var phrases = map[string]map[string]string{
 		"contacts-phone": "Phone",
 		"contacts-message": "Message",
 		"contacts-submit": "Send",
+		"stats-years-experience": "Years Experience",
+		"stats-happy-clients": "Happy Clients",
+		"stats-countries-served": "Countries Served",
+		"stats-on-time-delivery": "On-time Delivery",
 	},
 	"ps": {
 		"head-description": "زود لوژستیک، په نړیواله سوداګرۍ کې ستاسو باوري ملګری.",
@@ -84,5 +91,9 @@ var phrases = map[string]map[string]string{
 		"contacts-phone": "تلیفون",
 		"contacts-message": "پیغام",
 		"contacts-submit": "ولېږئ",
+		"stats-years-experience": "د تجربې کلونه",
+		"stats-happy-clients": "خوښ پیرودونکی",
+		"stats-countries-served": "خدمت شوي هېوادونه",
+		"stats-on-time-delivery": "په وخت رسول",
 	},
 }
